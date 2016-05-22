@@ -1,0 +1,30 @@
+.tab-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  li {
+    float: left;
+    width: 33.333%;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    background: $blue;
+    color: $white;
+    &:hover {
+      background: darken($blue, 10%);
+    }
+    &.active {
+      background: $orange;
+    }
+  }
+}
+
+.tab {
+  display: none;
+  max-width: 600px;
+  margin: 40px auto 0;
+  &.show {
+    display: block;
+  }
+}

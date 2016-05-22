@@ -30,7 +30,7 @@
     srcJS: 'js',
     fonts: 'fonts',
     scss: 'scss',
-    production: 'production'
+    production: 'dist'
   }
 
   /**

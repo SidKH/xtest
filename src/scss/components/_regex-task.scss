@@ -1,0 +1,35 @@
+.regexp {
+  input {
+    @extend .default-input;
+  }
+  .desc {
+    margin-bottom: 10px;
+  }
+  span {
+    display: none;
+    margin-top: 10px;
+    font-weight: bold;
+    &.valid-name {
+      color: $green;
+    }
+    &.invalid-name {
+      color: $red;
+    }
+  }
+  &.valid {
+    input {
+      border-color: $green;
+    }
+    .valid-name {
+      display: block;
+    }
+  }
+  &.not-valid {
+    input {
+      border-color: $red;
+    }
+    .invalid-name {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.fizzbuzz {
+  input {
+    @extend .default-input;
+    margin-bottom: 10px;
+  }
+  button {
+    @extend .default-button;
+  }
+  .console {
+    margin-top: 10px;
+    height: calc(100vh - 220px);
+    overflow: auto;
+    .entry {
+      padding: 5px;
+      border-bottom: 1px solid $grey;
+      background: $grey-light;
+      &:first-child {
+        border-top: 1px solid $grey;
+      }
+      &:nth-child(even) {
+        background: $white;
+      }
+    }
+  }
+}

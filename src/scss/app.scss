@@ -27,9 +27,21 @@ $media-expressions: (
 @import 'base/typography';
 @import 'base/forms';
 
-@import 'components/starter-box';
+@import 'components/tabs';
+@import 'components/regex-task';
+@import 'components/search-task';
+@import 'components/fizzbuzz-task';
+
+body {
+  background: $white;
+}
+
+a {
+  color: $orange;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 #wrapper {
-  max-width: 1000px;
   margin: 0 auto;
 }

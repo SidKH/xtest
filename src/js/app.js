@@ -1,19 +1,40 @@
-import HP from './helpers';
+import Tabs from './tabs';
+import RegExTask from './regex-task';
+import SearchText from './search-text-task';
+import Fizzbuzz from './fizzbuzz-task';
 
 (function ($) {
 
   // When DOM is ready
   $(function () {
-    example(HP.random(10, 20));
+    initTabs();
+    initRegExTask();
+    initSearchText();
+    initFizzBuzz();
   });
 
-  /**
-   * Just an example function
-   *   DELETE IT
-   * @param  {Number} n - random number between 10 and 20
-   */
-  function example(n) {
-    console.log(`Hello in ES6... I am ${n} - random number between 10 and 20`);
+  function initTabs() {
+    var $links = $('.tab-nav li');
+    if (!$links.length) { return; }
+    new Tabs($links);
+  }
+
+  function initRegExTask() {
+    var $cnt = $('.regexp');
+    if (!$cnt.length) { return; }
+    new RegExTask($cnt);
+  }
+
+  function initSearchText() {
+    var $form = $('.text-search');
+    if (!$form.length) { return; }
+    new SearchText($form);
+  }
+
+  function initFizzBuzz() {
+    var $cnt = $('.fizzbuzz');
+    if (!$cnt.length) { return; }
+    new Fizzbuzz($cnt);
   }
 
 }(jQuery));
