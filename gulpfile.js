@@ -16,8 +16,6 @@
     cssnano = require('gulp-cssnano'),
     debug = require('gulp-debug'),
     connect = require('gulp-connect'),
-    imagemin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant'),
     rimraf = require('gulp-rimraf'),
     browserify = require('browserify'),
     babelify = require('babelify');
@@ -114,9 +112,6 @@
       gulp.run('buildSass');
     });
     gulp.watch(`./${Paths.src}/vendor_entries/vendor.scss`, ['buildStylesVendors']);
-    watch(`./${Paths.src}/${Paths.srcImages}/**/*`, function () {
-      gulp.run('imageMin');
-    });
     gulp.watch([`./${Paths.build}/*`, './*.html']).on('change', function (file) {
       gulp.src(file.path).pipe(connect.reload());
     });
@@ -182,7 +177,7 @@
   }
 
   // Default Gulp Task
-  gulp.task('default', ['buildCustomJS', 'buildSass', 'buildJsVendors', 'buildStylesVendors', 'copyFonts', 'imageMin', 'startLocalhost', 'watch']);
-  gulp.task('dev', ['buildCustomJS', 'buildSass', 'buildJsVendors', 'buildStylesVendors', 'copyFonts', 'imageMin', 'watch']);
+  gulp.task('default', ['buildCustomJS', 'buildSass', 'buildJsVendors', 'buildStylesVendors', 'copyFonts', 'startLocalhost', 'watch']);
+  gulp.task('dev', ['buildCustomJS', 'buildSass', 'buildJsVendors', 'buildStylesVendors', 'copyFonts', 'watch']);
 
 }());
